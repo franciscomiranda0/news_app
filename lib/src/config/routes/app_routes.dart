@@ -4,12 +4,16 @@ abstract class AppRoutes {
   static const String home = '';
 
   static Route onGenerateRoute(RouteSettings settings) {
+    final Widget page;
+
     switch (settings.name) {
       case home:
-        return _buildRoute(Container());
+        page = Container();
+        break;
       default:
-        return _buildRoute(Container());
+        page = Container();
     }
+    return _buildRoute(page);
   }
 
   static Route _buildRoute(Widget page) =>
