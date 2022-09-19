@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/src/config/routes/app_routes.dart';
 import 'package:news_app/src/core/utils/constants.dart';
 
 void main() {
@@ -13,6 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: kAppTitle,
+      onGenerateRoute: AppRoutes.onGenerateRoute,
     );
   }
 }
