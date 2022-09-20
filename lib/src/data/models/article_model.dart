@@ -1,3 +1,4 @@
+import 'package:news_app/src/data/models/source_model.dart';
 import 'package:news_app/src/domain/entities/article.dart';
 
 class ArticleModel extends Article {
@@ -16,7 +17,7 @@ class ArticleModel extends Article {
   factory ArticleModel.fromMap(Map<String, dynamic> map) {
     return ArticleModel(
       id: map['id'],
-      source: source,
+      source: SourceModel.fromMap(map['source']),
       title: map['title'],
       description: map['description'],
       content: map['content'],
