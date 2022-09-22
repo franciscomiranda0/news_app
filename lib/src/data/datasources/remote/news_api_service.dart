@@ -7,14 +7,14 @@ part 'news_api_service.g.dart';
 
 @RestApi(baseUrl: kApiBaseUrl)
 abstract class NewsApiService {
-  factory NewsApiService(Dio dio, {required String baseUrl}) = _NewsApiService;
+  factory NewsApiService(Dio dio, {String baseUrl}) = _NewsApiService;
 
   @GET('/top-headlines')
   Future<HttpResponse<BreakingNewsResponseModel>> getBreakingNewsArticles({
     @Query('apiKey') String apiKey,
     @Query('country') String country,
     @Query('category') String category,
-    @Query('page') String page,
-    @Query('pageSize') String pageSize,
+    @Query('page') int page,
+    @Query('pageSize') int pageSize,
   });
 }
